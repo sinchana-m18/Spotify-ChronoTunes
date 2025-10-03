@@ -6,12 +6,18 @@ from spotipy.oauth2 import SpotifyOAuth
 import time
 import itertools
 import os
+import datetime
 
 st.set_page_config(page_title="Spotify Time Machine", layout="wide")
 st.title("🎵 Spotify ChronoTunes")
 st.write("Travel back in time and listen to Billboard Hot 100 from any date!")
 
-date = st.date_input("Select a date to travel to:")
+date = st.date_input(
+    "Select a date to travel to:",
+    min_value=datetime.date(1958, 8, 4),
+    max_value=datetime.date.today(),
+    value=datetime.date(2000, 1, 1)
+)
 
 if st.button("Create Playlist"):
     date_str = date.strftime("%Y-%m-%d")
