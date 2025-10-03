@@ -14,9 +14,9 @@ st.write("Travel back in time and listen to Billboard Hot 100 from any date!")
 date = st.date_input("Select a date to travel to:")
 
 if st.button("Create Playlist"):
-
+    date_str = date.strftime("%Y-%m-%d")
     year = str(date.year)
-    url = f"https://www.billboard.com/charts/hot-100/{date}/"
+    url = f"https://www.billboard.com/charts/hot-100/{date_str}/"
     header = {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
                       "AppleWebKit/537.36 (KHTML, like Gecko) "
