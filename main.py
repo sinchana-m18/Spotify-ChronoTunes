@@ -86,7 +86,7 @@ if st.button("Create Playlist"):
     st.success(f"🎉 Playlist created! [Open Full Playlist on Spotify]({playlist['external_urls']['spotify']})")
     st.info(f"{len(song_uris)} songs were added to the playlist successfully!")
 
-    st.subheader("🎶 Playlist Preview (3 columns)")
+    st.subheader("🎶 Playlist Preview")
 
     for i in range(0, len(song_data), 3):
         cols = st.columns(3)
