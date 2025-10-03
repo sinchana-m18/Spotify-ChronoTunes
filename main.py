@@ -8,7 +8,7 @@ import itertools
 import os
 
 st.set_page_config(page_title="Spotify Time Machine", layout="wide")
-st.title("🎵 Spotify Time Machine")
+st.title("🎵 Spotify ChronoTunes")
 st.write("Travel back in time and listen to Billboard Hot 100 from any date!")
 
 date = st.date_input("Select a date to travel to:")
