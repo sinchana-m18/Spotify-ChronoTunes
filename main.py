@@ -5,6 +5,7 @@ import spotipy
 from spotipy.oauth2 import SpotifyOAuth
 import time
 import itertools
+import os
 
 st.set_page_config(page_title="Spotify Time Machine", layout="wide")
 st.title("🎵 Spotify Time Machine")
@@ -31,9 +32,9 @@ if st.button("Create Playlist"):
 
     sp = spotipy.Spotify(
         auth_manager=SpotifyOAuth(
-            client_id="1c6eb194a5c248bfba9d276265d59b61",
-            client_secret="17a69f5cf4594239989f23f30e52a6f6",
-            redirect_uri="https://example.com",  # must match dashboard
+            client_id=os.getenv("SPOTIPY_CLIENT_ID"),
+            client_secret=os.getenv("SPOTIPY_CLIENT_SECRET"),
+            redirect_uri=os.getenv("SPOTIPY_REDIRECT_URI"),
             scope="playlist-modify-private playlist-modify-public user-read-private",
             show_dialog=True,
             cache_path="token.txt"
